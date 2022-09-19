@@ -9,7 +9,7 @@ namespace UriBuilderDemo
         static void Main(string[] args)
         {            
             
-            var domainEntry = Dns.GetHostEntry("kompas.com");
+            var domainEntry = Dns.GetHostEntry("facebook.com");
   
             Console.WriteLine(domainEntry.HostName);
             foreach (var ip in domainEntry.AddressList)
@@ -17,7 +17,13 @@ namespace UriBuilderDemo
                 Console.WriteLine(ip);
             }
 
-            Console.WriteLine(Dns.GetHostName());
+            domainEntry = Dns.GetHostEntry(Dns.GetHostName());
+            Console.WriteLine(domainEntry.HostName);
+            foreach (var ip in domainEntry.AddressList)
+            {
+                Console.WriteLine(ip);
+            }
+
             IPAddress ipadd = IPAddress.Parse("142.251.10.95");
             var ipEntry = Dns.GetHostEntry(ipadd);
             foreach (var ip in ipEntry.AddressList)
