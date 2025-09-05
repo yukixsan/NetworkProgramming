@@ -15,13 +15,17 @@ namespace SocketServerDemo
 
         public static void ExecuteServer()
         {
+            // Ask user which port to use
+            Console.Write("Enter port number to run the server on: ");
+            int port = int.Parse(Console.ReadLine());
+
             // Establish the local endpoint
             // for the socket. Dns.GetHostName
             // returns the name of the host
             // running the application.
             IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
             IPAddress ipAddr = ipHost.AddressList[0];
-            IPEndPoint localEndPoint = new IPEndPoint(ipAddr, 11111);
+            IPEndPoint localEndPoint = new IPEndPoint(ipAddr, port);
 
             // Creation TCP/IP Socket using
             // Socket Class Constructor

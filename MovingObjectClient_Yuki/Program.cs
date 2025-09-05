@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MovingObject
+namespace MovingObjectClient_Yuki
 {
-    static class Program
+    internal static class Program
     {
         /// The main entry point for the application.
         [STAThread]
@@ -14,7 +14,7 @@ namespace MovingObject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ClientForm());
         }
     }
 }
